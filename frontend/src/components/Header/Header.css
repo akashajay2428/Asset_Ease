@@ -1,0 +1,159 @@
+/* Header Styles */
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #e8f9fd, #e3f6f5);
+    min-height: 70vh;
+    position: relative;
+    overflow: hidden;
+    background: url("https://png.pngtree.com/thumb_back/fw800/background/20240704/pngtree-new-event-management-outdoor-image-image_15957682.jpg");
+    margin-top: 130px;
+    border-radius: 50px;
+}
+
+/* Content Section */
+.header-content {
+    max-width: 50%;
+    animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.header-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f8fafb;
+    margin-bottom: 15px;
+    animation: slideDown 1s ease-in-out;
+}
+
+.header-description {
+    font-size: 1.2rem;
+    color: #fcfdfd;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.header-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    color: #f9fbfc;
+    font-size: 1rem;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.header-features li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.header-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: white;
+    background: #064663;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: bounceIn 2s ease-in-out;
+}
+
+.header-btn:hover {
+    background: #3c6997;
+    transform: scale(1.05);
+}
+
+/* Image Section */
+.header-image img {
+    width: 100%;
+    max-width: 500px;
+    animation: fadeInRight 1.5s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.95);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-content {
+        max-width: 100%;
+    }
+
+    .header-image img {
+        max-width: 100%;
+    }
+}
