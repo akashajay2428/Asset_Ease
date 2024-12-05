@@ -1,4 +1,4 @@
-/* General Navbar Styling */
+/* Navbar Styles */
 .navbar {
     padding: 20px 30px;
     display: flex;
@@ -9,7 +9,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #e1e9ea; /* Pastel blue */
+    background-color: #e1e9ea; /* New pastel blue color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     margin-top: -10px;
@@ -36,7 +36,10 @@
     color: #49557e;
 }
 
-/* Active and Hover States */
+.navbar-menu li {
+    position: relative;
+}
+
 .navbar-menu a {
     text-decoration: none;
     color: #49557e;
@@ -47,31 +50,109 @@
 }
 
 .navbar-menu a:hover {
-    background-color: #a8d5e2; /* Hover effect */
+    background-color: #a8d5e2; /* Hover effect color */
     color: rgb(12, 12, 12);
     cursor: pointer;
 }
 
 .navbar-menu .active {
-    color: #087ea4; /* Active item color */
-    border-bottom: 2px solid #087ea4; /* Underline */
+    color: #087ea4; /* Active menu item color */
+    border-bottom: 2px solid #087ea4;
 }
 
-/* Profile */
-.profile a {
-    text-decoration: none;
-    color: #49557e;
-    font-weight: 500;
+/* Navbar Right Section */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
-/* Hamburger Menu Icon */
-.hamburger-menu {
-    display: none;
+/* Profile Section */
+.profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.profile img:hover {
+    transform: scale(1.1);
+}
+
+/* Button Styles */
+.navbar button {
+    background-color: transparent;
+    font-size: 16px;
     color: #49557e;
-    background: none;
-    border: none;
+    border: 1px solid #087ea4; /* New border color */
+    padding: 10px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar button:hover {
+    background-color: #087ea4; /* Hover background */
+    color: white;
+}
+
+/* Search Icon with Notification Dot */
+.navbar-search-icon {
+    position: relative;
+}
+
+.navbar-search-icon .Dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #087ea4;
+    border-radius: 50%;
+    top: -8px;
+    right: -8px;
+}
+
+/* Profile Dropdown */
+.navbar-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.nav-profile-dropdown {
+    position: absolute;
+    display: none;
+    right: 0;
+    z-index: 1;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f0f4f8;
+    padding: 12px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    list-style: none;
+}
+
+.navbar-profile:hover .nav-profile-dropdown {
+    display: flex;
+}
+
+.nav-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+}
+
+.nav-profile-dropdown li img {
+    width: 24px;
+}
+
+.nav-profile-dropdown li:hover {
+    background-color: #a8d5e2;
+    color: white;
+    border-radius: 4px;
 }
 
 /* Responsive Design */
@@ -83,6 +164,18 @@
     .navbar-menu {
         gap: 15px;
         font-size: 17px;
+    }
+
+    .navbar-right {
+        gap: 30px;
+    }
+
+    .navbar-right img {
+        width: 22px;
+    }
+
+    .navbar-right button {
+        padding: 8px 25px;
     }
 }
 
@@ -96,72 +189,98 @@
         font-size: 16px;
     }
 
-    .hamburger-menu {
-        display: block;
+    .navbar-right {
+        gap: 20px;
     }
 
-    .navbar-menu {
-        display: none;
-        flex-direction: column;
-        gap: 10px;
-        background-color: #f0f4f8;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        padding: 15px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transform: translateY(-100%);
-        transition: transform 0.3s ease-in-out;
+    .navbar-right img {
+        width: 20px;
     }
 
-    .navbar-menu.open {
-        display: flex;
-        transform: translateY(0);
-    }
-
-    .navbar-menu li {
-        text-align: center;
-    }
-
-    .navbar-menu a {
-        padding: 12px 0;
+    .navbar-right button {
+        padding: 7px 20px;
         font-size: 15px;
     }
 }
 
+/* Mobile View */
+@media (max-width: 750px) {
+    .navbar-menu {
+        display: none;
+    }
+
+    .navbar-right {
+        gap: 15px;
+    }
+}
+
+/* Dropdown Menu for Mobile */
 @media (max-width: 750px) {
     .navbar {
-        flex-direction: column;
-        padding: 15px 20px;
+        flex-wrap: wrap;
     }
 
     .navbar-menu {
         display: flex;
         flex-direction: column;
-        gap: 15px;
         background-color: #f0f4f8;
-        padding: 15px 0;
         width: 100%;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px 0;
+        gap: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 999;
         transform: translateY(-100%);
         transition: transform 0.3s ease-in-out;
     }
 
-    .navbar-menu.open {
+    .navbar.open .navbar-menu {
         transform: translateY(0);
     }
+}
 
-    .navbar-menu li {
-        text-align: center;
-    }
 
-    .navbar-menu a {
-        padding: 12px 0;
-        font-size: 15px;
-    }
 
-    .profile a {
-        font-size: 14px;
-    }
+
+/* Profile Icon */
+.profile-icon {
+    font-size: 32px; /* Icon size */
+    color: #087ea4; /* Primary color */
+    cursor: pointer;
+    transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.profile-icon:hover {
+    color: #065a87; /* Slight hover effect */
+    transform: scale(1.1);
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+    position: absolute;
+    top: 67px; /* Adjust based on navbar height */
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.dropdown-btn {
+    background-color: #087ea4;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-btn:hover {
+    background-color: #065a87;
 }

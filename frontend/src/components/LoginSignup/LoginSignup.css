@@ -1,0 +1,125 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal Container */
+.modal-container {
+    background: #fff;
+    padding: 30px 40px; /* Increased padding for a cleaner layout */
+    border-radius: 12px; /* Softer corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* More spacing between inputs */
+}
+
+input {
+    padding: 12px 15px; /* Comfortable padding */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #087ea4; /* Focus border color */
+    outline: none;
+    box-shadow: 0 0 4px rgba(8, 126, 164, 0.5);
+}
+
+/* Button Styles */
+.form-btn {
+    padding: 12px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #087ea4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-btn:hover {
+    background-color: #065a87;
+    transform: scale(1.02);
+}
+
+/* Link Styles */
+.form-link {
+    color: #087ea4;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.form-link:hover {
+    color: #065a87;
+}
+
+/* Headings */
+h2 {
+    margin-bottom: 20px; /* Separate heading from the form */
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+/* Paragraph for Links */
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .modal-container {
+        padding: 20px 25px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    .form-btn {
+        font-size: 14px;
+    }
+}
