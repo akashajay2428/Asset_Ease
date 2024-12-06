@@ -14,6 +14,10 @@ const adminRoute = require('./routes/admin');
 app.use('/admin', adminRoute)
 
 
+const userRoute = require('./routes/userRoute');
+app.use('/user', userRoute)
+
+
 app.listen(4000, () => {
     console.log("server is up on port 4000");
 })
